@@ -10,4 +10,19 @@
 ; @return The current ema
 ;*
 (defn ema [period prev-ema price]
-  (+ (* (- price prev-ema) (/ 2 (+ 1 period))) prev-ema))
+  (with-precision 20
+    (+ (* (- price prev-ema) (/ 2 (+ 1 period))) prev-ema)))
+
+;*
+; @return 1 for buy -1 for sell 0 for hold
+;*
+(defn ema-signal
+  ([ema price] (ema-signal ema price 0))
+  ([ema price envelope]
+    (let [env (* ema envelope)
+          upper (+ ema env)
+          lower (- ema env)]
+      (cond
+        (> price upper) 1
+        (< price lower) -1
+        :else 0))))
