@@ -30,9 +30,10 @@
       <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stock_algorithms/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.86595744" vertical-offset="158" max-vertical-offset="1098">
-              <caret line="78" column="52" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.86595744" vertical-offset="338" max-vertical-offset="1278">
+              <caret line="90" column="50" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
               <folding>
+                <element signature="e#453#568#0" expanded="false" />
                 <element signature="e#622#876#0" expanded="false" />
                 <element signature="e#889#1054#0" expanded="false" />
                 <element signature="e#1367#1606#0" expanded="false" />
@@ -325,7 +326,11 @@
       <created>1419275782161</created>
       <updated>1419275782161</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added rsi needs doc">
+      <created>1419278934937</created>
+      <updated>1419278934937</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -378,7 +383,8 @@
     </option>
     <MESSAGE value="ATR added" />
     <MESSAGE value="Std-deviation added needs doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Std-deviation added needs doc" />
+    <MESSAGE value="added rsi needs doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added rsi needs doc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -393,6 +399,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
           <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding>
+            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />
@@ -407,6 +414,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="612">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
+            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />
@@ -421,6 +429,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="612">
           <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
           <folding>
+            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />
@@ -432,9 +441,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stock_algorithms/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86595744" vertical-offset="158" max-vertical-offset="1098">
-          <caret line="78" column="52" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.86595744" vertical-offset="338" max-vertical-offset="1278">
+          <caret line="90" column="50" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
           <folding>
+            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />

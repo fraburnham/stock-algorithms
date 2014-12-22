@@ -64,8 +64,6 @@
         sq-diff (map #(Math/pow (- %1 mean) 2) prices)]
     (Math/sqrt (/ (reduce + sq-diff) (count sq-diff)))))
 
-(defn tsi [])
-
 (defn rsi [period up-ema down-ema close last-close]
   (let [up (if (> close last-close)
              (- close last-close)
@@ -76,4 +74,18 @@
         n-up-ema (ema period up-ema up)
         n-down-ema (ema period down-ema down)
         rs (/ n-up-ema n-down-ema)]
-    [n-up-ema n-down-ema (- 100 (/ 100 (+ 1 rs)))]))
+    [(- 100 (/ 100 (+ 1 rs))) n-up-ema n-down-ema]))
+
+(defn tsi
+  ([close last-close r-ema s-ema abs-r-ema abs-s-ema]
+    (tsi close last-close 25 13 r-ema s-ema abs-r-ema abs-s-ema))
+  ;r is inner smoothing period for momentum
+  ;s is outter smoothing period for momentum
+  ([close last-close r s r-ema s-ema abs-r-ema abs-s-ema]
+    (let [m (- close last-close)
+          n-r-ema (ema r r-ema m)
+          n-s-ema (ema s s-ema n-r-ema)
+          n-abs-r-ema (ema r abs-r-ema (Math/abs m))
+          n-abs-s-ema (ema s abs-s-ema n-abs-r-ema)]
+      [(* 100 (/ n-s-ema n-abs-s-ema))
+       n-r-ema n-s-ema n-abs-r-ema n-abs-s-ema])))
