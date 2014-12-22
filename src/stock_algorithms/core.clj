@@ -57,3 +57,9 @@
 (defn atr [high low last-close last-atr period]
   (let [tr (true-range high low last-close)]
     (/ (+ (* last-atr (- period 1)) tr) period)))
+
+
+(defn standard-deviation [prices]
+  (let [mean (/ (reduce + prices) (count prices))
+        sq-diff (map #(Math/pow (- %1 mean) 2) prices)]
+    (Math/sqrt (/ (reduce + sq-diff) (count sq-diff)))))
