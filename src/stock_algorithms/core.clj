@@ -1,21 +1,21 @@
 (ns stock-algorithms.core)
 
-;*
-; Calculate the current ema for a period given the previous ema and the
-; current price. EMA requires a warmup; if your period is 10 warm up with the
-; first 10 datapoints. On the first call prev-ema is the same as price.
-; @param period Number of time periods to average
-; @param prev-ema The last result of ema (use price if this is the first call)
-; @param price The current price
-; @return The current ema
-;*
+;;*
+;; Calculate the current ema for a period given the previous ema and the
+;; current price. EMA requires a warmup; if your period is 10 warm up with the
+;; first 10 datapoints. On the first call prev-ema is the same as price.
+;; @param period Number of time periods to average
+;; @param prev-ema The last result of ema (use price if this is the first call)
+;; @param price The current price
+;; @return The current ema
+;;*
 (defn ema [period prev-ema price]
   (with-precision 20
     (+ (* (- price prev-ema) (/ 2 (+ 1 period))) prev-ema)))
 
-;*
-; @return 1 for buy -1 for sell 0 for hold
-;*
+;;*
+;; @return 1 for buy -1 for sell 0 for hold
+;;*
 (defn ema-signal
   ([ema price] (ema-signal ema price 0))
   ([ema price envelope]
@@ -26,3 +26,34 @@
         (> price upper) 1
         (< price lower) -1
         :else 0))))
+
+;;*
+;;
+;;*
+(defn true-range [high low last-close]
+  (reduce #(Math/max %1 %2)
+          [(- high low) (Math/abs (- high last-close))
+           (Math/abs (- low last-close))]))
+
+;;*
+;; Calculate the first ATR value before using the standard ATR algo.
+;; @param period The period to use for ATR. This must match the (count data)
+;; @param data The data needed for warming up ATR. In the format
+;;             ((high low last-close) (high low last-close))
+;; @return The first ATR value
+;;*
+(defn atr-warmup [period data]
+  (if (not (= (count data) period))
+    nil
+    (/ (reduce +
+               (map (fn [[high low last-close]]
+                      (true-range high low last-close))
+                    data))
+       period)))
+
+;;*
+;; Calculate average true range to determine price volatility.
+;;*
+(defn atr [high low last-close last-atr period]
+  (let [tr (true-range high low last-close)]
+    (/ (+ (* last-atr (- period 1)) tr) period)))
