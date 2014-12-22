@@ -63,3 +63,17 @@
   (let [mean (/ (reduce + prices) (count prices))
         sq-diff (map #(Math/pow (- %1 mean) 2) prices)]
     (Math/sqrt (/ (reduce + sq-diff) (count sq-diff)))))
+
+(defn tsi [])
+
+(defn rsi [period up-ema down-ema close last-close]
+  (let [up (if (> close last-close)
+             (- close last-close)
+             0)
+        down (if (> close last-close)
+               0
+               (- last-close close))
+        n-up-ema (ema period up-ema up)
+        n-down-ema (ema period down-ema down)
+        rs (/ n-up-ema n-down-ema)]
+    [n-up-ema n-down-ema (- 100 (/ 100 (+ 1 rs)))]))
