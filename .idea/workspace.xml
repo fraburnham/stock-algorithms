@@ -30,15 +30,15 @@
       <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stock_algorithms/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.86595744" vertical-offset="338" max-vertical-offset="1278">
-              <caret line="90" column="50" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.7106109" vertical-offset="512" max-vertical-offset="1134">
+              <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
               <folding>
-                <element signature="e#453#568#0" expanded="false" />
                 <element signature="e#622#876#0" expanded="false" />
                 <element signature="e#889#1054#0" expanded="false" />
                 <element signature="e#1367#1606#0" expanded="false" />
                 <element signature="e#1679#1821#0" expanded="false" />
                 <element signature="e#1824#2020#0" expanded="false" />
+                <element signature="e#2022#2426#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -330,7 +330,11 @@
       <created>1419278934937</created>
       <updated>1419278934937</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added tsi needs doc">
+      <created>1419279535611</created>
+      <updated>1419279535611</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -341,7 +345,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885212" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -384,7 +388,8 @@
     <MESSAGE value="ATR added" />
     <MESSAGE value="Std-deviation added needs doc" />
     <MESSAGE value="added rsi needs doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added rsi needs doc" />
+    <MESSAGE value="added tsi needs doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tsi needs doc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -399,12 +404,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
           <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding>
-            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />
             <element signature="e#1679#1821#0" expanded="false" />
             <element signature="e#1824#2020#0" expanded="false" />
+            <element signature="e#2022#2426#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -414,12 +419,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="612">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
-            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />
             <element signature="e#1679#1821#0" expanded="false" />
             <element signature="e#1824#2020#0" expanded="false" />
+            <element signature="e#2022#2426#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -429,27 +434,27 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="612">
           <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
           <folding>
-            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />
             <element signature="e#1679#1821#0" expanded="false" />
             <element signature="e#1824#2020#0" expanded="false" />
+            <element signature="e#2022#2426#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stock_algorithms/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86595744" vertical-offset="338" max-vertical-offset="1278">
-          <caret line="90" column="50" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.7106109" vertical-offset="512" max-vertical-offset="1134">
+          <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
           <folding>
-            <element signature="e#453#568#0" expanded="false" />
             <element signature="e#622#876#0" expanded="false" />
             <element signature="e#889#1054#0" expanded="false" />
             <element signature="e#1367#1606#0" expanded="false" />
             <element signature="e#1679#1821#0" expanded="false" />
             <element signature="e#1824#2020#0" expanded="false" />
+            <element signature="e#2022#2426#0" expanded="false" />
           </folding>
         </state>
       </provider>

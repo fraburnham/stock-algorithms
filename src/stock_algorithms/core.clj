@@ -85,7 +85,7 @@
     (let [m (- close last-close)
           n-r-ema (ema r r-ema m)
           n-s-ema (ema s s-ema n-r-ema)
-          n-abs-r-ema (ema r abs-r-ema (Math/abs m))
+          n-abs-r-ema (ema r abs-r-ema (.abs m))
           n-abs-s-ema (ema s abs-s-ema n-abs-r-ema)]
       [(* 100 (/ n-s-ema n-abs-s-ema))
        n-r-ema n-s-ema n-abs-r-ema n-abs-s-ema])))
