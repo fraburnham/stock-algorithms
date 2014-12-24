@@ -1,6 +1,21 @@
 (ns stock-algorithms.core)
 
 ;;*
+;;
+;;*
+(def alpha-base 0.01)
+
+;;*
+;;
+;;*
+(def alpha-inc 0.01)
+
+;;*
+;;
+;;*
+(def alpha-max 0.20)
+
+;;*
 ;; Calculate the current ema for a period given the previous ema and the
 ;; current price. EMA requires a warmup; if your period is 10 warm up with the
 ;; first 10 datapoints. On the first call prev-ema is the same as price.
@@ -10,8 +25,8 @@
 ;; @return The current ema
 ;;*
 (defn ema [period prev-ema price]
-  (with-precision 20
-    (+ (* (- price prev-ema) (/ 2 (+ 1 period))) prev-ema)))
+  ;(with-precision 20
+    (+ (* (- price prev-ema) (/ 2 (+ 1 period))) prev-ema));)
 
 ;;*
 ;; @return 1 for buy -1 for sell 0 for hold
@@ -96,3 +111,33 @@
         (< close last-close)
         (- last-obv volume)
         :else last-obv))
+
+;look for a cleaner way to handle the different alpha data globals are
+;undesireable.
+;high [last-high this-high]
+;low [last-low this-low]
+;close [last-close this-close]
+(defn psar [sar alpha ep high low close]
+  (let [[lh th] high
+        [ll tl] low
+        [lc tc] close
+        uptrend (< sar tc)
+        downtrend (> sar tc)
+        [ep alpha] ((fn [ep a] ;make sure alpha doesn't exceed the max
+                      [ep (if (> a alpha-max) alpha-max a)])
+                     (cond (and ;new high, move ep
+                             uptrend
+                             (> high ep)) [high (+ alpha-inc alpha)]
+                           (and ;new low, move ep
+                             downtrend
+                             (< low ep)) [low (+ alpha-inc alpha)]
+                           :else [ep alpha]))
+        n-sar (+ sar (* alpha (- ep sar)))]
+    (cond
+      ;trend reversal, adjust
+      (and uptrend (> sar tl)) [ep alpha-base th]
+      (and downtrend (< sar th)) [ep alpha-base tl]
+      ;n-sar is inside or beyond price range, adjust
+      (and uptrend (or (> n-sar tl) (> n-sar ll))) [(min ll tl) alpha ep]
+      (and downtrend (or (< n-sar th) (< n-sar lh))) [(min lh th) alpha ep]
+      :else [n-sar alpha ep])))

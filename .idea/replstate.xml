@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ReplState" timestamp="1419294470847">{:repl-history {:ide [], :local [&quot;(Math/abs -123)&quot; &quot;(reduce #(Math/max %1 %2) '(1 2 3 4 5 234 564346 1234))&quot; &quot;(map (fn [x y] (println x y)) [[1 2] [3 4] [5 6]])&quot; &quot;(map (fn [[x y]] (println x y)) [[1 2] [3 4] [5 6]])&quot; &quot;(Math/pow 5 2)&quot; &quot;(abs 0123)&quot;], :remote []}}</component>
+  <component name="ReplState" timestamp="1419442912485">{:repl-history {:ide [], :local [&quot;(Math/abs -123)&quot; &quot;(reduce #(Math/max %1 %2) '(1 2 3 4 5 234 564346 1234))&quot; &quot;(map (fn [x y] (println x y)) [[1 2] [3 4] [5 6]])&quot; &quot;(map (fn [[x y]] (println x y)) [[1 2] [3 4] [5 6]])&quot; &quot;(Math/pow 5 2)&quot; &quot;(abs 0123)&quot;], :remote []}}</component>
 </project>
 
