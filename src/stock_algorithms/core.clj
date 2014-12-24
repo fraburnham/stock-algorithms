@@ -89,3 +89,10 @@
           n-abs-s-ema (ema s abs-s-ema n-abs-r-ema)]
       [(* 100 (/ n-s-ema n-abs-s-ema))
        n-r-ema n-s-ema n-abs-r-ema n-abs-s-ema])))
+
+(defn obv [last-obv volume close last-close]
+  (cond (> close last-close)
+        (+ last-obv volume)
+        (< close last-close)
+        (- last-obv volume)
+        :else last-obv))
